@@ -1,0 +1,128 @@
+{
+  "entities": {
+    "Article": {
+      "title": "Article",
+      "description": "News article or citizen story published on the portal",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "title": { "type": "string", "maxLength": 500 },
+        "slug": { "type": "string", "maxLength": 200 },
+        "category": { "type": "string" },
+        "subCategory": { "type": "string" },
+        "summary": { "type": "string", "maxLength": 2000 },
+        "content": { "type": "string", "maxLength": 50000 },
+        "imageUrl": { "type": "string" },
+        "imageCaption": { "type": "string" },
+        "authorName": { "type": "string" },
+        "authorRole": { "type": "string" },
+        "authorAvatar": { "type": "string" },
+        "publishedAtBikramSambat": { "type": "string" },
+        "publishedAtIso": { "type": "string" },
+        "readTimeMinutes": { "type": "number" },
+        "viewsCount": { "type": "number" },
+        "isBreaking": { "type": "boolean" },
+        "isFeatured": { "type": "boolean" },
+        "isTrending": { "type": "boolean" },
+        "location": { "type": "string" },
+        "province": { "type": "string" },
+        "status": { "type": "string", "enum": ["PENDING_AI_VERIFICATION", "AI_VERIFIED", "PUBLISHED", "REJECTED"] },
+        "submittedByCitizen": { "type": "boolean" },
+        "reporterPhone": { "type": "string" },
+        "reporterIdDocumentUrl": { "type": "string" }
+      },
+      "required": ["title", "category", "summary", "content", "status"]
+    },
+    "AdBanner": {
+      "title": "AdBanner",
+      "description": "Advertisement banner unit",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "placementSlot": { "type": "string" },
+        "title": { "type": "string" },
+        "advertiserName": { "type": "string" },
+        "imageUrl": { "type": "string" },
+        "targetUrl": { "type": "string" },
+        "isActive": { "type": "boolean" },
+        "impressions": { "type": "number" },
+        "clicks": { "type": "number" },
+        "dimensions": { "type": "string" }
+      },
+      "required": ["placementSlot", "title", "imageUrl", "targetUrl", "isActive"]
+    },
+    "TeamMember": {
+      "title": "TeamMember",
+      "description": "Staff or editorial team member profile",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "nameNepali": { "type": "string" },
+        "nameEnglish": { "type": "string" },
+        "designation": { "type": "string" },
+        "department": { "type": "string" },
+        "photoUrl": { "type": "string" },
+        "email": { "type": "string" },
+        "phone": { "type": "string" },
+        "bio": { "type": "string" },
+        "pressCardNo": { "type": "string" },
+        "displayOrder": { "type": "number" }
+      },
+      "required": ["nameNepali", "designation", "department"]
+    },
+    "CitizenReporter": {
+      "title": "CitizenReporter",
+      "description": "Registered citizen reporter",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "fullName": { "type": "string" },
+        "phone": { "type": "string" },
+        "isVerifiedPhone": { "type": "boolean" },
+        "idDocumentType": { "type": "string" },
+        "idDocumentNumber": { "type": "string" },
+        "idDocumentUrl": { "type": "string" },
+        "address": { "type": "string" },
+        "status": { "type": "string" },
+        "registeredAt": { "type": "string" },
+        "articlesSubmittedCount": { "type": "number" }
+      },
+      "required": ["fullName", "phone", "status"]
+    },
+    "CategoryItem": {
+      "title": "CategoryItem",
+      "description": "News category for site navigation and CMS grouping",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "nameNepali": { "type": "string" },
+        "slug": { "type": "string" },
+        "isActive": { "type": "boolean" },
+        "displayOrder": { "type": "number" }
+      },
+      "required": ["nameNepali", "isActive", "displayOrder"]
+    }
+  },
+  "firestore": {
+    "/articles/{articleId}": {
+      "schema": { "$ref": "#/entities/Article" },
+      "description": "Collection of news articles"
+    },
+    "/ads/{adId}": {
+      "schema": { "$ref": "#/entities/AdBanner" },
+      "description": "Collection of ad banners"
+    },
+    "/team/{memberId}": {
+      "schema": { "$ref": "#/entities/TeamMember" },
+      "description": "Collection of team members"
+    },
+    "/citizenReporters/{reporterId}": {
+      "schema": { "$ref": "#/entities/CitizenReporter" },
+      "description": "Collection of citizen reporter registrations"
+    },
+    "/categories/{categoryId}": {
+      "schema": { "$ref": "#/entities/CategoryItem" },
+      "description": "Collection of categories"
+    }
+  }
+}

@@ -1,0 +1,8 @@
+{
+  "name": "Yathartha khabar",
+  "description": "Professional Nepali news portal featuring AI verification, user reporting, custom CMS, and strategic ad placements for modern news agencies.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}

@@ -1,0 +1,48 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 520 120" width="100%" height="100%">
+  <defs>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Mukta:wght@800;900&amp;display=swap');
+      .logo-blue { fill: #003399; }
+      .logo-red { fill: #C8102E; }
+      .logo-text { font-family: 'Mukta', 'Noto Sans Devanagari', 'Kalimati', sans-serif; font-weight: 900; }
+    </style>
+  </defs>
+
+  <!-- Left Logo Icon (Magnifying Glass + Pen Nib) -->
+  <g id="logo-icon" transform="translate(10, 0)">
+    <!-- Blue Handle extending to bottom-right (~5 o'clock) -->
+    <path d="M72 74 L98 100 Q106 108 100 114 Q94 120 86 112 L60 86 Z" fill="#003399" />
+    <path d="M68 70 L92 94 C100 102 108 110 100 116 C92 122 84 114 76 106 L52 82 Z" fill="#003399" />
+
+    <!-- Outer RED Concentric Ring -->
+    <circle cx="52" cy="52" r="44" stroke="#C8102E" stroke-width="5" fill="#FFFFFF" />
+
+    <!-- Inner BLUE Concentric Ring -->
+    <circle cx="52" cy="52" r="37" stroke="#003399" stroke-width="2.5" fill="none" />
+
+    <!-- Fountain Pen Nib Inside Lens -->
+    <g transform="translate(52, 52) rotate(-38) translate(-22, -28)">
+      <!-- Blue Collar/Sleeve at Top Right -->
+      <path d="M12 44 L36 44 L33 52 L15 52 Z" fill="#003399" />
+      
+      <!-- Red Nib Body -->
+      <path d="M24 0 L38 30 L34 44 L14 44 L10 30 Z" fill="#C8102E" />
+      <path d="M24 0 L38 30 L34 44 L24 44 Z" fill="#A80C24" />
+
+      <!-- White Center Slit and Breather Hole -->
+      <line x1="24" y1="0" x2="24" y2="24" stroke="#FFFFFF" stroke-width="2.5" stroke-linecap="round" />
+      <circle cx="24" cy="24" r="3" fill="#FFFFFF" />
+
+      <!-- White Inner Emblem / Flower Motif -->
+      <path d="M24 30 L26 34 L30 34 L27 36.5 L28 40.5 L24 38 L20 40.5 L21 36.5 L18 34 L22 34 Z" fill="#FFFFFF" />
+    </g>
+  </g>
+
+  <!-- Right Side Devanagari Text: "यथार्थ खबर" -->
+  <g id="logo-text" transform="translate(132, 82)">
+    <text class="logo-text" font-size="64" letter-spacing="-1">
+      <tspan class="logo-blue" x="0">यथार्थ</tspan>
+      <tspan class="logo-red" x="185">खबर</tspan>
+    </text>
+  </g>
+</svg>
